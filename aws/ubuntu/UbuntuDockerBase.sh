@@ -44,7 +44,7 @@ systemctl start docker
 
 # Enable on boot
 systemctl enable docker
-apt updgrade -y
+apt upgrade -y
 
 # Add docker user to group and verify run
 su - docker
