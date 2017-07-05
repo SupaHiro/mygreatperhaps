@@ -17,7 +17,7 @@
 
 # update apt and install requirements
 apt update
-apt install build-essential libssl-dev libperl-dev pkg-config -y
+apt install -y build-essential libssl-dev libperl-dev pkg-config
 
 #Install ZNC
 cd /usr/local/src; sudo wget http://znc.in/releases/znc-latest.tar.gz
