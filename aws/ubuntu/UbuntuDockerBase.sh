@@ -2,8 +2,8 @@
 '
 
 **Module**:
-       :platform: Ubuntu
-       :synopsis: AWS Lightsail
+       :platform: Ubuntu 17.04 x64
+       :synopsis: Docker-Ubuntu build for AWS Lightsail & DigitalOcean
 
 .. moduleauthor:: OccamsReiza
 

@@ -45,6 +45,11 @@ systemctl enable httpd.service
 cd /tmp
 wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
 tar zxf nagios-plugins.tar.gz
+cd /tmp/nagios-plugins-release-2.2.1/
+./tools/setup
+./configure
+make
+make install
 
 # Create Users
 useradd nagios
@@ -52,7 +57,12 @@ usermod -a -G nagios apache
 
 
 # Firewall Rules
+systemctl enable firewalld
+systemctl start firewalld
 firewall-cmd --zone=public --add-port=80/tcp
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 
+# restart and check external ip
+curl icanhazip.com > /tmp/externalip.txt
+shutdown -r
 
